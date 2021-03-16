@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <link crossorigin="anonymous" integrity="sha384-FLueTXqvLZ1BQD0Ex/RzMdirnRyZE0wg9bBYx+SrCMD2MWzzbrSdtEfrs7KHLAlH"
+        href="https://lib.baomitu.com/openlayers/3.21.0-beta.2/ol-debug.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+    </style>
+    <script crossorigin="anonymous" integrity="sha384-GpL5l6zvGkiNYJwRz3hBkRQx6GZMXu+Iiw1HlIdB/wxWpsfNduZMWD5TphVQdg6b"
+        src="https://lib.baomitu.com/openlayers/3.21.0-beta.2/ol-debug.js"></script>
+    <title>OpenLayers example</title>
+</head>
+
+<body>
+    <div id="map" style="width: 100%;height: 100vh"></div>
+    <script>
+        var map = new ol.Map({
+            layers: [
+                // 加载本地瓦片
+                new ol.layer.Tile({
+                    source: new ol.source.XYZ({
+                        url: "您的瓦片地址",
+                    })
+                })
+            ],
+            target: 'map',
+            view: new ol.View({
+                center: [115.393361, 40.280654],
+                zoom: 3,
+                minZoom: 3,
+                maxZoom: 7
+            }),
+        });
+    </script>
+</body>
+
+</html>
